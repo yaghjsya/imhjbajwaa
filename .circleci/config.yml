@@ -23,4 +23,4 @@ workflows:
     jobs:
       - job_with_optional_custom_checkout:
           custom_checkout: "any non-empty string is truthy"
-      - job_with_optional_custom_checkout
+
